@@ -6,21 +6,18 @@ class Solution(object):
         :rtype: str
         """
         res = []
-        length = len(num1) if len(num1) < len(num2) else len(num2)
-        revs_num1 = num1[-1::-1]
-        revs_num2 = num2[-1::-1]
-        p, tmp = 0, 0
-        while p < length:
-            n1 = ord(revs_num1[p]) - ord('0')
-            n2 = ord(revs_num2[p]) - ord('0')
-            res.append(str((n1+n2)%10 + tmp))
-            tmp = (n1+n2)//10
-            p += 1
-        nums = revs_num1 if len(num1) > len(num2) else revs_num2
-        tmp += nums[-1]
-        res.extend(nums[p:])
+        i, j, carry = len(num1)-1, len(num2)-1, 0
+        while i >= 0 or j >= 0:
+            n1 = (ord(num1[i]) - ord('0')) if i>=0 else 0
+            n2 = (ord(num2[j]) - ord('0')) if j>=0 else 0
+            tmp = n1 + n2 + carry
+            carry = tmp // 10
+            res.append(str(tmp%10))
+            i, j = i -1, j-1
+        if carry:
+            res.append(str(carry))
         res.reverse()
-        return ''.join(res)
+        return ''.join(res[-1:])
 
 def test():
     s = Solution()
@@ -28,3 +25,4 @@ def test():
     assert s.addStrings('123',  '234') == '357'
     assert s.addStrings('123', '2340') == '2463'
     assert s.addStrings('1', '9') == '10'
+    assert s.addStrings('9', '99') == '108'
