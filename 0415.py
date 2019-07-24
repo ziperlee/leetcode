@@ -16,8 +16,8 @@ class Solution(object):
             i, j = i -1, j-1
         if carry:
             res.append(str(carry))
-        res.reverse()
-        return ''.join(res[-1:])
+        # res.reverse()
+        return ''.join(res[::-1])
 
 def test():
     s = Solution()
