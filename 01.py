@@ -1,7 +1,7 @@
 """
  Create by zipee on 2019/7/2.
 """
-__author__ = 'zipee'
+__author__ = "zipee"
 
 
 class Solution(object):

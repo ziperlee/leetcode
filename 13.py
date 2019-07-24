@@ -22,7 +22,7 @@ class Solution(object):
 
         # zip 提取相同位置的字符，set判断是否为公共字符，index查询第一个未匹配字符位置
         r = [len(set(c)) == 1 for c in zip(*strs)] + [0]
-        return strs[0][:r.index(0)] if strs else ''
+        return strs[0][: r.index(0)] if strs else ""
 
         # res = ""
         # for tmp in zip(*strs):
@@ -36,6 +36,6 @@ class Solution(object):
 
 def test():
     s = Solution()
-    assert s.longestCommonPrefix(["flower","flow","flight"]) == 'fl'
-    assert s.longestCommonPrefix(["dog","racecar","car"]) == ''
-    assert s.longestCommonPrefix(["abab","aba",""]) == ''
+    assert s.longestCommonPrefix(["flower", "flow", "flight"]) == "fl"
+    assert s.longestCommonPrefix(["dog", "racecar", "car"]) == ""
+    assert s.longestCommonPrefix(["abab", "aba", ""]) == ""

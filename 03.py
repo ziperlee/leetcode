@@ -1,7 +1,7 @@
 """
  Create by zipee on 2019/7/2.
 """
-__author__ = 'zipee'
+__author__ = "zipee"
 
 
 class Solution:
@@ -15,7 +15,7 @@ class Solution:
                 idx = cur_s.index(_s)
                 if len(cur_s) > max_len:
                     max_len = len(cur_s)
-                cur_s = cur_s[idx+1:]
+                cur_s = cur_s[idx + 1 :]
             cur_s.append(_s)
 
         if len(cur_s) > max_len:
@@ -26,7 +26,7 @@ class Solution:
 
 def test():
     s = Solution()
-    assert s.lengthOfLongestSubstring('abcabcbb') == 3
-    assert s.lengthOfLongestSubstring('bbbbb') == 1
-    assert s.lengthOfLongestSubstring('pwwkew') == 3
-    assert s.lengthOfLongestSubstring('aabaab!bb') == 3
+    assert s.lengthOfLongestSubstring("abcabcbb") == 3
+    assert s.lengthOfLongestSubstring("bbbbb") == 1
+    assert s.lengthOfLongestSubstring("pwwkew") == 3
+    assert s.lengthOfLongestSubstring("aabaab!bb") == 3

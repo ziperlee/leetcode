@@ -5,11 +5,6 @@ class Solution(object):
         :type num2: str
         :rtype: str
         """
-    def str2int(self, s):
-        return ord(s) - ord('0')
-
-
-    def multiply(self, num1: str, num2: str) -> str:
         a, b = num1[::-1], num2[::-1]
         res = 0
 
@@ -20,8 +15,11 @@ class Solution(object):
             res += res_j * 10 ** i
         return str(res)
 
+    def str2int(self, s):
+        return ord(s) - ord("0")
+
 
 def test():
     s = Solution()
-    assert s.multiply('2', '3') == '6'
-    assert s.multiply('123', '456') == '56088'
+    assert s.multiply("2", "3") == "6"
+    assert s.multiply("123", "456") == "56088"
